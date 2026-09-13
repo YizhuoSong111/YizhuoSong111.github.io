@@ -20,6 +20,14 @@ npm run check
 
 `dist/` is generated output. Edit `content/`, `public/`, or `scripts/`, then rebuild. Do not edit generated HTML.
 
+## GitHub Pages deployment
+
+The personal website is served at <https://yizhuosong111.github.io/> from the repository `YizhuoSong111/YizhuoSong111.github.io`.
+
+In repository **Settings → Pages**, the build source must be **GitHub Actions**. The workflow in `.github/workflows/pages.yml` runs `npm ci`, `npm run build`, and `npm run check`, then publishes only the contents of `dist/`. A push to `main` or a manual workflow dispatch deploys an update. Publishing the repository root through Jekyll would show this README instead of the generated website.
+
+This checkout uses `scripts/build.mjs`, not Vite. It already emits site-root URLs such as `/styles.css`, `/site.js`, and `/research/scpme-qtl/`. The base path is `/`; no repository-name prefix or Vite migration is needed. If Vite is introduced later, its `base` must remain `/` for this root personal site.
+
 ## Content map
 
 | File | Contents |
