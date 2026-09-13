@@ -13,9 +13,11 @@
 .hero-portrait>img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 43%;border-radius:1rem;background:#e4e5e2}
 .hero-focus{display:flex;align-items:center;gap:.65rem;margin-top:.75rem;color:var(--accent);font-size:.8rem;font-weight:500;letter-spacing:.025em}
 .gene-mark{width:3.5rem;height:3.5rem;flex:none}
-.gene-strand{stroke:var(--accent);stroke-width:2}
-.gene-strand-secondary{stroke:var(--blue)}
-.gene-rungs{stroke:var(--accent);stroke-opacity:.4;stroke-width:1.4}
+.gene-mark path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.gene-rear{stroke-width:2.1}
+.gene-front{stroke-width:2.5}
+.gene-rungs{stroke:url(#gene-rung-tone);stroke-opacity:.7;stroke-width:1.2}
+.gene-highlight{stroke:#e0eee7;stroke-width:.65;opacity:.5;transform:translate(-.35px,-.4px)}
 @media(max-width:1050px) and (min-width:761px){.hero-layout{column-gap:2.5rem;grid-template-columns:minmax(0,1fr) minmax(15rem,.65fr)}.hero .hero-intro h1{font-size:clamp(3.55rem,7vw,5rem)}}
 @media(max-width:760px){.hero-layout{grid-template-columns:1fr;grid-template-areas:"intro" "portrait" "statement";gap:1.8rem;margin:1.5rem 0 2rem}.hero .hero-intro h1{font-size:clamp(3.4rem,10.5vw,5rem);margin-bottom:.85rem}.hero-affiliation{font-size:.95rem;margin-bottom:.85rem}.hero-portrait{max-width:25rem;justify-self:start}.hero-portrait>img{aspect-ratio:5/4;object-position:50% 37%;border-radius:.8rem}.hero-focus{margin-top:.5rem}.hero-layout .hero-statement{font-size:clamp(1.85rem,5.4vw,2.3rem)}}
 @media(hover:hover) and (prefers-reduced-motion:no-preference){a{transition:color 120ms ease,background-color 120ms ease}a:active{transition:none}}
@@ -27,11 +29,8 @@
 @media(prefers-contrast:more){:root{--muted:#2c424b;--line:#647b84}.site-header{background:var(--paper);backdrop-filter:none;border-bottom:1px solid var(--ink)}.tags li{color:inherit}.content-note,.output-pending{color:var(--ink)}}
 @media print{.site-header,.skip-link,.footer,.back-link,.research-reading aside,.next-project{display:none}body{background:white;color:black}.shell{width:100%}.section{padding-block:2rem}.hero h1{font-size:4rem}.hero-grid{gap:2rem}.research-reading{display:block;border:0}.research-section{break-inside:avoid}.text-link{color:black}a{color:inherit}.project-page-hero{padding:0 0 2rem}}
 /* Motion is progressive enhancement: the default document is visible and readable. */
-.gene-space{display:block;position:relative;flex:none;width:3.5rem;height:3.5rem;perspective:30rem}
-.gene-object{display:block;position:relative;width:100%;height:100%;transform-style:preserve-3d}
-.gene-object .gene-mark{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.gene-middle{transform:translateZ(4px)}
-.gene-front{transform:translateZ(8px)}
+.gene-space{display:block;position:relative;flex:none;width:3.5rem;height:3.5rem;contain:layout paint}
+.gene-space .gene-mark{display:block;width:100%;height:100%}
 /* Reserve the existing dark palette for the later research-vision chapter. */
 .flagship{display:block}
 .flagship-story{display:grid;grid-template-columns:1.15fr 1fr;gap:6rem;align-items:start}
@@ -101,7 +100,7 @@
 }
 @media(prefers-reduced-motion:reduce){
   .is-entering,[data-hero],[data-reveal],[data-reveal-group]>*{animation:none!important;opacity:1!important;transform:none!important}
-  .gene-object,.gene-object .gene-mark,.hero-portrait>img{transform:none!important}
+  .hero-portrait>img{transform:none!important}
   .flagship-intro{position:static!important}
   .flagship-step{opacity:1!important;transform:none!important;transition:none!important}
   .prediction-transition span{opacity:1!important}
@@ -112,7 +111,7 @@
 }
 @media print{
   .is-entering{animation:none!important;opacity:1!important;transform:none!important}
-  .gene-object,.gene-object .gene-mark,.hero-portrait>img{transform:none!important}
+  .hero-portrait>img{transform:none!important}
   .flagship-intro{position:static!important}
   .flagship-step{min-height:0!important;opacity:1!important;transform:none!important}
   .prediction-transition span{opacity:1!important}

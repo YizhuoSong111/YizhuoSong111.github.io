@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'yaml';
 import { marked } from 'marked';
+import { geneMark } from '../public/gene-mark.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const source = path.join(root, 'content');
@@ -63,12 +64,6 @@ function sectionHead(id, number, extra = '') {
 function publication(p) {
   return `<article class="publication"><span class="publication-year">${esc(p.year)}</span><div><p class="meta">${esc(p.venue)}</p><h3>${esc(p.title)}</h3><p class="authors">${esc(p.authors)}${p.author_note ? ` <span>${esc(p.author_note)}</span>` : ''}</p><p class="publication-status">${esc(p.status)}</p><div class="output-links">${p.links.map(l=>link(l.url,l.label,'text-link')).join('')}</div>${p.bibtex ? `<details class="citation"><summary>BibTeX</summary><pre><code>${esc(p.bibtex)}</code></pre><button type="button" class="copy-bib" data-copy="bib-${esc(p.id)}">Copy citation</button><textarea id="bib-${esc(p.id)}" class="sr-only" tabindex="-1" aria-hidden="true">${esc(p.bibtex)}</textarea><span class="copy-status" role="status"></span></details>` : ''}</div></article>`;
 }
-// Independent SVG layers preserve the drawing while adding a few pixels of depth.
-const geneMark = `<span class="gene-space" aria-hidden="true"><span class="gene-object">
-<svg class="gene-mark gene-rear" viewBox="0 0 80 80" focusable="false"><path class="gene-strand gene-strand-secondary" fill="none" stroke-linecap="round" d="M56 6C56 22 24 34 24 54S56 70 56 76"/></svg>
-<svg class="gene-mark gene-middle" viewBox="0 0 80 80" focusable="false"><path class="gene-rungs" fill="none" stroke-linecap="round" d="M24 10H56M28 18H52M34 26H46M34 42H46M28 50H52M24 58H56M28 66H52"/></svg>
-<svg class="gene-mark gene-front" viewBox="0 0 80 80" focusable="false"><path class="gene-strand" fill="none" stroke-linecap="round" d="M24 6C24 22 56 34 56 54S24 70 24 76"/><circle cx="56" cy="54" r="3.5" fill="var(--accent)"/></svg>
-</span></span>`;
 function projectCopy(p) {
   return `<div class="project-copy"><p class="eyebrow">${esc(p.category)}</p><h3>${link(`/research/${p.slug}/`,p.title)}</h3><p class="project-headline">${esc(p.headline)}</p><p>${esc(p.summary)}</p>${tags(p.tags)}<a class="text-link" href="/research/${p.slug}/">Read the research story ${arrow}<span class="sr-only">: ${esc(p.title)}</span></a></div>`;
 }
@@ -97,7 +92,7 @@ const home = `<main id="main"><section id="home" class="hero shell" aria-labelle
   </div>
   <figure class="hero-portrait" data-hero="4">
     <img src="${safeURL(site.portrait.src)}" alt="${esc(site.portrait.alt)}" width="${esc(site.portrait.width)}" height="${esc(site.portrait.height)}" fetchpriority="high">
-    <figcaption class="hero-focus">${geneMark}<span>${esc(site.identity[0])}</span></figcaption>
+    <figcaption class="hero-focus">${geneMark()}<span>${esc(site.identity[0])}</span></figcaption>
   </figure>
   <div class="hero-copy">
     <p class="hero-statement" data-hero="3">${esc(site.statement)}</p>

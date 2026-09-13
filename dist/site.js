@@ -64,7 +64,6 @@ function enhanceHomepageMotion() {
   const hero = document.querySelector('#home');
   if (!hero || !('IntersectionObserver' in window)) return;
   const desktop = matchMedia('(min-width:1051px) and (min-height:700px)');
-  const pointer = matchMedia('(hover:hover) and (pointer:fine) and (min-width:1051px)');
   const entering = new Set();
   function reveal(element, delay = 0, isHero = false) {
     if (reduced.matches) return;
@@ -94,9 +93,6 @@ function enhanceHomepageMotion() {
   }, {threshold:.12});
   if (!reduced.matches) document.querySelectorAll('[data-reveal],[data-reveal-group]').forEach(el => entrances.observe(el));
 
-  const object = hero.querySelector('.gene-object');
-  const space = hero.querySelector('.gene-space');
-  const nearIcon = hero.querySelector('.hero-focus');
   const portrait = hero.querySelector('.hero-portrait > img');
   const story = document.querySelector('.flagship-story');
   const steps = [...document.querySelectorAll('.flagship-step')];
@@ -104,8 +100,7 @@ function enhanceHomepageMotion() {
   const words = transition ? [...transition.children] : [];
   const visible = new Set();
   const geometry = {};
-  let frame = 0, previous = 0, activeStep = -1;
-  let aimX = 0, aimY = 0, tiltX = 0, tiltY = 0, velocityX = 0, velocityY = 0;
+  let frame = 0, activeStep = -1;
   const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(max, value));
   const schedule = () => {
     if (!frame && !reduced.matches && !document.hidden) frame = requestAnimationFrame(update);
@@ -113,7 +108,7 @@ function enhanceHomepageMotion() {
   function measure() {
     // Read geometry in one phase; scroll frames only use these cached document coordinates.
     const y = scrollY;
-    for (const [name, el] of Object.entries({hero, space, story, transition})) {
+    for (const [name, el] of Object.entries({hero, story, transition})) {
       if (!el) continue;
       const rect = el.getBoundingClientRect();
       geometry[name] = {top:rect.top+y, height:rect.height, centerX:rect.left+rect.width/2};
@@ -123,33 +118,15 @@ function enhanceHomepageMotion() {
   }
   function clearSpatialState() {
     cancelAnimationFrame(frame);
-    frame = previous = 0;
-    aimX = aimY = tiltX = tiltY = velocityX = velocityY = 0;
-    object?.style.removeProperty('transform');
+    frame = 0;
     portrait?.style.removeProperty('transform');
     words.forEach(el => el.style.removeProperty('opacity'));
     steps.forEach(el => {el.classList.remove('is-current');el.removeAttribute('aria-current');});
     activeStep = -1;
   }
-  // Exact critically damped spring: retargeting preserves position and velocity.
-  function spring(position, velocity, target, dt) {
-    const omega = 15, offset = position-target, step = (velocity+omega*offset)*dt, decay = Math.exp(-omega*dt);
-    return [target+(offset+step)*decay, (velocity-omega*step)*decay];
-  }
-  function update(time) {
+  function update() {
     frame = 0;
-    const dt = Math.min((time-previous)/1000 || 1/60, .05);
-    previous = time;
     const y = scrollY, height = innerHeight;
-    if (pointer.matches && object && geometry.hero) {
-      [tiltX,velocityX] = spring(tiltX,velocityX,aimX,dt);
-      [tiltY,velocityY] = spring(tiltY,velocityY,aimY,dt);
-      const moving = Math.abs(tiltX-aimX)+Math.abs(tiltY-aimY)+Math.abs(velocityX)+Math.abs(velocityY) > .015;
-      if (!moving) {tiltX=aimX;tiltY=aimY;velocityX=velocityY=0;}
-      const progress = clamp((y-geometry.hero.top)/(geometry.hero.height*.8));
-      object.style.transform = `rotateX(${(tiltX+progress*2).toFixed(3)}deg) rotateY(${(tiltY+progress*22).toFixed(3)}deg)`;
-      if (moving) schedule();
-    }
     if (desktop.matches) {
       if (portrait && visible.has(hero)) {
         const progress = clamp((y-geometry.hero.top)/(geometry.hero.height*.8));
@@ -173,32 +150,19 @@ function enhanceHomepageMotion() {
         words[2].style.opacity = (.45+progress*.55).toFixed(3);
       }
     }
-    if (!frame) previous = 0;
   }
   const visibility = new IntersectionObserver(entries => {
     for (const entry of entries) {
       if (entry.isIntersecting) visible.add(entry.target); else visible.delete(entry.target);
-      if (entry.target===hero && !entry.isIntersecting) aimX=aimY=0;
     }
     schedule();
   }, {rootMargin:'100px 0px'});
   [hero,story,transition].filter(Boolean).forEach(el => visibility.observe(el));
-  nearIcon?.addEventListener('pointerenter', () => {if(pointer.matches&&!reduced.matches)measure();});
-  nearIcon?.addEventListener('pointermove', event => {
-    if (!pointer.matches || reduced.matches || event.pointerType==='touch' || !geometry.space) return;
-    aimY = clamp((event.clientX-geometry.space.centerX)/90,-1,1)*10;
-    aimX = -clamp((event.clientY-(geometry.space.top-scrollY+geometry.space.height/2))/65,-1,1)*6;
-    schedule();
-  });
-  const neutral = () => {aimX=aimY=0;schedule();};
-  nearIcon?.addEventListener('pointerleave', neutral);
-  nearIcon?.addEventListener('pointercancel', neutral);
-  window.addEventListener('blur', neutral);
   window.addEventListener('scroll', () => {if(visible.size)schedule();}, {passive:true});
   window.addEventListener('resize', measure, {passive:true});
   window.addEventListener('pageshow', measure);
   document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {cancelAnimationFrame(frame);frame=previous=0;aimX=aimY=0;}
+    if (document.hidden) {cancelAnimationFrame(frame);frame=0;}
     else measure();
   });
   if ('ResizeObserver' in window) new ResizeObserver(measure).observe(document.body);
@@ -213,7 +177,8 @@ function enhanceHomepageMotion() {
   }
   reduced.addEventListener('change', sync);
   desktop.addEventListener('change', sync);
-  pointer.addEventListener('change', sync);
   sync();
 }
 enhanceHomepageMotion();
+const gene = document.querySelector('.gene-mark');
+if (gene) import('./gene-mark.js').then(({animateGeneMark}) => animateGeneMark(gene, reduced));
