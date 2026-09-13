@@ -9,7 +9,17 @@ basketball:
     alt: NYU Shanghai basketball teams gathered for a group photo.
     width: 2400
     height: 1600
+firefly:
+  heading: FIREFLY GIRLS
+  metadata: Founded 2012 · Present
+  description: Supporting economically disadvantaged girls through long-term volunteer work and community initiatives.
+  role: Established and led volunteer initiatives supporting economically disadvantaged girls through sustained community service and empowerment programs.
+  metrics:
+    - {value: 10+, label: Volunteer Activities}
+    - {value: 200+, label: Cumulative Volunteer Hours}
+    - {value: 237, label: Girls Directly Supported}
+    - {value: 2012, label: Founded}
+  recognition:
+    - {title: Excellent Volunteer Organization, date: March 2022}
+    - {title: Outstanding Volunteer Award, date: May 2020}
 ---
-### Firefly Girls
-
-I also founded and led Firefly Girls, a volunteer organization supporting economically disadvantaged girls through the Qingdao Women's Federation. We organized more than 10 volunteer activities, with 200+ hours of participation, directly benefiting 237 girls. Firefly Girls was recognized as an Excellent Volunteer Organization in March 2022, and I received the Outstanding Volunteer Award in May 2020. Community work remains an important part of my life.

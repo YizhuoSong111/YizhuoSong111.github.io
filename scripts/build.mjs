@@ -111,7 +111,17 @@ const home = `<main id="main"><section id="home" class="hero shell" aria-labelle
     <figure class="beyond-photo" data-reveal><img src="${safeURL(beyond.basketball.photo.src)}" srcset="${safeURL(beyond.basketball.photo.small)} 960w, ${safeURL(beyond.basketball.photo.src)} ${esc(beyond.basketball.photo.width)}w" sizes="(max-width:760px) calc(100vw - 2.5rem), (max-width:1050px) calc(100vw - 4rem), (max-width:1312px) calc(100vw - 6rem), 76rem" alt="${esc(beyond.basketball.photo.alt)}" width="${esc(beyond.basketball.photo.width)}" height="${esc(beyond.basketball.photo.height)}" loading="lazy" decoding="async"></figure>
     <div class="beyond-entry"><h3 id="basketball-heading">${esc(beyond.basketball.heading)}</h3><p>${esc(beyond.basketball.text)}</p></div>
   </article>
-  <div class="beyond-entry beyond-community">${marked.parse(beyond.body)}</div>
+  <article class="firefly" aria-labelledby="firefly-heading">
+    <header class="firefly-header">
+      <div><h3 id="firefly-heading">${esc(beyond.firefly.heading)}</h3><p class="firefly-meta">${esc(beyond.firefly.metadata)}</p></div>
+      <p class="firefly-description">${esc(beyond.firefly.description)}</p>
+    </header>
+    <ul class="firefly-metrics" aria-label="Firefly Girls impact">${beyond.firefly.metrics.map(metric=>`<li><strong>${esc(metric.value)}</strong><span>${esc(metric.label)}</span></li>`).join('')}</ul>
+    <div class="firefly-footer">
+      <p class="firefly-role">${esc(beyond.firefly.role)}</p>
+      <div class="firefly-recognition"><p class="eyebrow">Recognition</p><ul>${beyond.firefly.recognition.map(item=>`<li><strong>${esc(item.title)}</strong><span>${esc(item.date)}</span></li>`).join('')}</ul></div>
+    </div>
+  </article>
 </div></section>
 <section id="contact" class="section shell contact" aria-labelledby="contact-heading">${sectionHead('contact','07')}<div class="contact-grid"><div><h2 id="contact-heading" class="display-heading">Let's talk.</h2><p>${esc(site.contact_intro)}</p><a class="email-link" href="mailto:${esc(site.email)}">${esc(site.email)} ${arrow}</a></div><div class="contact-links"><p class="eyebrow">${esc(site.name)}</p>${site.links.filter(l=>l.label!=='Email' && l.url).map(l=>l.url?`<a href="${safeURL(l.url)}"><span>${esc(l.label)}${l.detail?`<small>${esc(l.detail)}</small>`:''}</span>${arrow}</a>`:`<div class="unavailable"><span>${esc(l.label)}</span><small>${esc(l.placeholder)}</small></div>`).join('')}</div></div></section></main>`;
 
