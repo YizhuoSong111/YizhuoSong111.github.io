@@ -16,8 +16,6 @@
 .gene-strand{stroke:var(--accent);stroke-width:2}
 .gene-strand-secondary{stroke:var(--blue)}
 .gene-rungs{stroke:var(--accent);stroke-opacity:.4;stroke-width:1.4}
-/* Keep the signature mark in the first viewport on shorter desktop screens. */
-@media(min-width:1051px) and (max-height:760px){.hero-portrait{max-width:20rem}}
 @media(max-width:1050px) and (min-width:761px){.hero-layout{column-gap:2.5rem;grid-template-columns:minmax(0,1fr) minmax(15rem,.65fr)}.hero .hero-intro h1{font-size:clamp(3.55rem,7vw,5rem)}}
 @media(max-width:760px){.hero-layout{grid-template-columns:1fr;grid-template-areas:"intro" "portrait" "statement";gap:1.8rem;margin:1.5rem 0 2rem}.hero .hero-intro h1{font-size:clamp(3.4rem,10.5vw,5rem);margin-bottom:.85rem}.hero-affiliation{font-size:.95rem;margin-bottom:.85rem}.hero-portrait{max-width:25rem;justify-self:start}.hero-portrait>img{aspect-ratio:5/4;object-position:50% 37%;border-radius:.8rem}.hero-focus{margin-top:.5rem}.hero-layout .hero-statement{font-size:clamp(1.85rem,5.4vw,2.3rem)}}
 @media(hover:hover) and (prefers-reduced-motion:no-preference){a{transition:color 120ms ease,background-color 120ms ease}a:active{transition:none}}
