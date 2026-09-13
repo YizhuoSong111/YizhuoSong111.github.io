@@ -1,0 +1,18 @@
+- id: regulation
+  category: Genetic regulation
+  question: How does genetic regulation change across cellular states?
+  text: A genetic variant's effect may depend on the cellular context in which it acts. I'm exploring how to estimate those effects along continuous states, and how genetic-response profiles might help us describe the states themselves.
+  tags: [Single-cell eQTLs, Statistical genetics, Context-dependent effects]
+  projects: [scpme-qtl, regulotype]
+- id: dynamics
+  category: Biological dynamics
+  question: How can we model biological dynamics when snapshot observations are incomplete?
+  text: Different kinetic parameters can explain the same snapshot while implying different futures. I want to understand what additional observations can distinguish these explanations, and what remains uncertain.
+  tags: [RNA velocity, Kinetic identifiability, Temporal constraints]
+  projects: [fuse-velo]
+- id: heterogeneity
+  category: Computation × biology
+  question: How can computational models preserve biological heterogeneity instead of averaging it away?
+  text: A model can perform well in one setting and fail on an unseen perturbation. I'm interested in evaluation that reveals where a model generalizes, which cellular responses it preserves, and where its conclusions break down.
+  tags: [Single-cell modeling, Perturbations, Evaluation]
+  projects: [cellforge]

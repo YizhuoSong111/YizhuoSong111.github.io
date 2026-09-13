@@ -1,0 +1,9 @@
+- title: Statistical Genetics
+  methods: [eQTL analysis, Generalized linear mixed models, Score tests, Permutation calibration, Latent-variable models]
+- title: Single-Cell Genomics
+  methods: [scRNA-seq, Continuous cellular states, RNA velocity, Perturbation data, Regulatory heterogeneity]
+- title: Machine Learning
+  methods: [Representation learning, Deep learning, Scientific machine learning, Variational models]
+- title: Computational Research
+  methods: [Simulation, Benchmarking, HPC / Slurm, Reproducible pipelines, Statistical evaluation]
+  software: Python · R · PyTorch · NumPy · Pandas

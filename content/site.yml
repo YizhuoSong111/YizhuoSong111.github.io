@@ -1,0 +1,34 @@
+name: Yizhuo Song
+hero_label: Research & ideas
+description: Statistical genetics, single-cell genomics, and computational biology. I explore how computation can reveal hidden structure in complex biological systems.
+identity:
+  - Statistical Genetics
+  - Single-Cell Genomics
+  - Computational Biology / AI for Biology
+statement: I explore how computation can reveal hidden structure in complex biological systems.
+location: New Haven, Connecticut
+email: yizhuo.song@yale.edu
+navigation:
+  - {id: home, label: Home}
+  - {id: about, label: Who I Am}
+  - {id: ideas, label: What I Think About}
+  - {id: work, label: Selected Work}
+  - {id: journey, label: My Journey}
+  - {id: publications, label: Publications & Recognition}
+  - {id: methods, label: Tools & Methods}
+  - {id: beyond, label: Beyond Research}
+  - {id: contact, label: Contact}
+contact_intro: I'm interested in conversations about statistical genetics, cellular dynamics, and methods that make biological inference more reliable.
+links:
+  - {label: Email, url: 'mailto:yizhuo.song@yale.edu'}
+  - {label: GitHub, url: 'https://github.com/YizhuoSong111'}
+  - {label: Google Scholar, url: null, placeholder: Profile link to add}
+  - {label: LinkedIn, url: null, placeholder: Profile link to add}
+  - {label: CV, url: /files/Yizhuo-Song-CV.docx, detail: Word document}
+themes:
+  - title: Cellular Heterogeneity
+    text: How biological effects change across cellular states.
+  - title: Biological Dynamics
+    text: What can we infer when biology is observed only through incomplete snapshots?
+  - title: Computation × Biology
+    text: How can computational models preserve biological structure rather than average it away?

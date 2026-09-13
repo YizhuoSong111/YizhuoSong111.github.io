@@ -1,0 +1,29 @@
+- id: cortical-eqtls
+  title: Identifying Static and Dynamic Single-Cell eQTLs across Human Prefrontal Cortical Layers
+  authors: Chu, Z.†, Song, Y.†, Gerstein, M.
+  author_note: † Co-first authors
+  venue: ISMB 2026
+  year: 2026
+  status: Poster presented · Journal manuscript in preparation
+  links: []
+  link_placeholder: Poster and manuscript links to add
+  bibtex: null
+- id: pinn
+  title: Physics-Informed Neural Network for Solving Buckley-Leverett Equation of Plane Radial Flow
+  authors: Zang, J., Song, Y., Bai, J., Zhang, K., Wang, J., Ablameyko, S. V.
+  venue: IEEE · DOCS 2024
+  year: 2024
+  status: Conference paper · Best Paper Award
+  links:
+    - {label: Paper ↗, url: 'https://doi.org/10.1109/DOCS63458.2024.10704290'}
+  link_placeholder: null
+  bibtex: |
+    @inproceedings{zang2024physics,
+      author = {Zang, Jianpeng and Song, Yizhuo and Bai, Junting and Zhang, Kai and Wang, Jian and Ablameyko, Sergey V.},
+      title = {Physics-Informed Neural Network for Solving Buckley-Leverett Equation of Plane Radial Flow},
+      booktitle = {2024 6th International Conference on Data-driven Optimization of Complex Systems (DOCS)},
+      year = {2024},
+      pages = {39--44},
+      publisher = {IEEE},
+      doi = {10.1109/DOCS63458.2024.10704290}
+    }
