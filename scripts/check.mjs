@@ -21,7 +21,7 @@ for(const [file,{html}] of docs){for(const match of html.matchAll(/\b(?:href|src
   count++;
 }}
 const home=docs.get(path.join(root,'index.html')).html;
-const expected=['home','about','ideas','work','journey','publications','methods','beyond','contact'];
+const expected=['home','about','work','journey','publications','methods','beyond','contact'];
 const actual=[...home.matchAll(/<section id="([^"]+)"/g)].map(m=>m[1]);assert.deepEqual(actual,expected);
 for(const slug of ['scpme-qtl','regulotype','fuse-velo','cellforge']){
   const html=docs.get(path.join(root,'research',slug,'index.html'))?.html;

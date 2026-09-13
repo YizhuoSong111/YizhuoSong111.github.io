@@ -1,5 +1,4 @@
 name: Yizhuo Song
-hero_label: Research & ideas
 affiliation: Yale University
 portrait:
   src: /images/yizhuo-song-portrait.png
@@ -10,14 +9,12 @@ description: Statistical genetics, single-cell genomics, and computational biolo
 identity:
   - Statistical Genetics
   - Single-Cell Genomics
-  - Computational Biology / AI for Biology
+  - AI for Biology
 statement: I explore how computation can reveal hidden structure in complex biological systems.
-location: New Haven, Connecticut
 email: yizhuo.song@yale.edu
 navigation:
   - {id: home, label: Home}
   - {id: about, label: Who I Am}
-  - {id: ideas, label: What I Think About}
   - {id: work, label: Selected Work}
   - {id: journey, label: My Journey}
   - {id: publications, label: Publications & Recognition}
