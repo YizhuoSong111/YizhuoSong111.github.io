@@ -33,7 +33,7 @@ A good fit to observed counts does not necessarily identify a unique cellular tr
 
 The framework combines kinetic ODE forward simulation with a Sinkhorn optimal-transport loss. It rolls a predicted population forward and aligns its distribution with an observed future cell population.
 
-The evaluation compares kinetic-parameter estimation and future-state prediction against VELOVI and VeloVAE. Synthetic and real-data validation are part of the project scope; dataset-level findings remain to be added.
+The evaluation compares kinetic-parameter estimation and future-state prediction against VELOVI and VeloVAE. Synthetic and real-data validation are part of the project scope.
 
 ## 04. My Contribution
 
@@ -41,7 +41,7 @@ I developed the future-state-constrained framework, integrated ODE forward simul
 
 ## 05. What We Found
 
-**Results to add.** The framework and benchmark are described in my CV, but a verified account of comparative results and remaining identifiability limits has not yet been added.
+This work is in progress.
 
 ## 06. What It Led Me To Ask
 
@@ -49,4 +49,4 @@ Which temporal observations resolve which ambiguities? I also want to understand
 
 ## 07. Outputs
 
-**Outputs to add.** Research notes, code, and any manuscript will be linked once confirmed.
+Research in progress.

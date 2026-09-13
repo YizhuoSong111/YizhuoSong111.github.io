@@ -1,4 +1,8 @@
 intro: My path into computational biology has been shaped by a recurring concern about what a model lets us conclude.
+transition: {from: Prediction, to: Inference}
+vision:
+  stages: [Genotype, Regulatory dynamics, Cellular state, Complex traits]
+  statement: I want to carry uncertainty in those inferred states into the biological conclusions we draw.
 chapters:
   - title: From prediction to interpretation
     context: NYU Shanghai · Data Science / Artificial Intelligence

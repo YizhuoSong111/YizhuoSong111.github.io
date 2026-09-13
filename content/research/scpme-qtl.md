@@ -9,6 +9,21 @@ status: Manuscript in preparation
 context: Gerstein Lab · Yale
 tags: [Poisson GLMM, Donor-level reduction, Vectorized score tests]
 diagram: regulation
+home_story:
+  steps:
+    - title: Raw UMI counts
+      text: Raw counts and continuous cellular states, without first collapsing cells into pseudobulk samples or discrete state bins.
+    - title: Gene-level Poisson null GLMM
+      text: A Poisson generalized linear mixed model, with a donor-level reduction.
+    - title: Vectorized score-test inference
+      text: Cis-variant testing under gene-level null models, avoiding a separate alternative-model fit for every variant.
+    - title: Static & dynamic cis-eQTLs
+      text: Shared effects and effects that change with cellular context.
+  metrics:
+    - {value: '2.8M+', label: single nuclei}
+    - {value: '388', label: donors}
+    - {value: '18', label: cell types}
+    - {value: '+20.3%', label: unique eGenes}
 image: null
 image_alt: null
 image_caption: null
@@ -52,4 +67,4 @@ Cellular states are themselves estimated from sparse data. How should their unce
 
 ## 07. Outputs
 
-Z. Chu and I are co-first authors of the ISMB 2026 poster with M. Gerstein. Download and repository links will be added when available.
+Z. Chu and I are co-first authors of the ISMB 2026 poster with M. Gerstein.

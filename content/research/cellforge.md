@@ -49,4 +49,4 @@ How can an evaluation reveal which biological responses a model preserves and wh
 
 ## 07. Outputs
 
-**Links to add.** Benchmark code, manuscript details, and supporting materials have not yet been linked.
+Benchmarking research.

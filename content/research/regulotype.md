@@ -33,7 +33,7 @@ Genetic regulation depends on context. Studying the structure of those responses
 
 The model uses low-rank latent factors to jointly learn cellular regulatory coordinates and variant-specific effect loadings. Pooling information across cells and independent cis-regulatory regions supports estimation of cell-resolved effect profiles.
 
-Covariate-moderated empirical Bayes regularization stabilizes effect estimation in sparse data. Simulation, model development, and conceptual analysis are part of the research direction; a detailed simulation design remains to be documented here.
+Covariate-moderated empirical Bayes regularization stabilizes effect estimation in sparse data. Simulation, model development, and conceptual analysis are part of the research direction.
 
 ## 04. My Contribution
 
@@ -41,7 +41,7 @@ I developed statistical methods for cell-resolved cis-regulatory effect profiles
 
 ## 05. What We Found
 
-**Results to add.** This work is in progress. A verified summary of the simulations, empirical findings, and limitations has not yet been added.
+This work is in progress.
 
 ## 06. What It Led Me To Ask
 
@@ -49,4 +49,4 @@ How can we distinguish a reproducible genetic-response structure from patterns i
 
 ## 07. Outputs
 
-My research notes explore the conceptual landscape around regulotypes. Manuscript status and code links remain to be added.
+My research notes explore the conceptual landscape around regulotypes.
