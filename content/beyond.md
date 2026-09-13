@@ -12,4 +12,4 @@ basketball:
 ---
 ### Firefly Girls
 
-I also founded Firefly Girls, a volunteer organization supporting economically disadvantaged girls through the Qingdao Women's Federation. Community work remains an important part of my life.
+I also founded and led Firefly Girls, a volunteer organization supporting economically disadvantaged girls through the Qingdao Women's Federation. We organized more than 10 volunteer activities, with 200+ hours of participation, directly benefiting 237 girls. Firefly Girls was recognized as an Excellent Volunteer Organization in March 2022, and I received the Outstanding Volunteer Award in May 2020. Community work remains an important part of my life.
