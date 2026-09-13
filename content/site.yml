@@ -1,5 +1,11 @@
 name: Yizhuo Song
 hero_label: Research & ideas
+affiliation: Yale University
+portrait:
+  src: /images/yizhuo-song-portrait.png
+  alt: Portrait of Yizhuo Song
+  width: 1536
+  height: 1024
 description: Statistical genetics, single-cell genomics, and computational biology. I explore how computation can reveal hidden structure in complex biological systems.
 identity:
   - Statistical Genetics
