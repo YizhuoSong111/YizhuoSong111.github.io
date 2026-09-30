@@ -1,10 +1,11 @@
 name: Yizhuo Song
 affiliation: Yale University
 portrait:
-  src: /images/yizhuo-song-portrait.png
+  src: /images/yizhuo-song-portrait-1200.jpg
+  small: /images/yizhuo-song-portrait-720.jpg
   alt: Portrait of Yizhuo Song
-  width: 1536
-  height: 1024
+  width: 1200
+  height: 800
 description: Statistical genetics, single-cell genomics, and computational biology. I explore how computation can reveal hidden structure in complex biological systems.
 identity:
   - Statistical Genetics
@@ -30,8 +31,11 @@ links:
   - {label: CV, url: /files/Yizhuo-Song-CV.docx, detail: Word document}
 themes:
   - title: Cellular Heterogeneity
+    project: scpme-qtl
     text: How biological effects change across cellular states.
   - title: Biological Dynamics
+    project: fuse-velo
     text: What can we infer when biology is observed only through incomplete snapshots?
   - title: Computation × Biology
+    project: cellforge
     text: How can computational models preserve biological structure rather than average it away?

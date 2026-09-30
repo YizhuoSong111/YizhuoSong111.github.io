@@ -1,7 +1,7 @@
 // A projected SVG helix: no canvas, WebGL, filters, or animation dependency.
 // The build and browser share the same geometry, so the static mark is complete.
 const TAU = Math.PI * 2;
-const TURN_MS = 10000;
+const TURN_MS = 4800;
 const RADIUS = 16;
 const ELEVATION = .1;
 const fixed = value => value.toFixed(3);
@@ -95,18 +95,19 @@ export function animateGeneMark(svg, reduced) {
     if (previous === null) previous = time;
     const delta = time - previous;
     if (delta >= 1000 / 30) {
-      elapsed = (elapsed + delta) % TURN_MS;
+      elapsed = Math.min(elapsed + delta, TURN_MS);
       previous = time;
       paint(elapsed / TURN_MS * TAU);
     }
-    frame = requestAnimationFrame(tick);
+    if (elapsed < TURN_MS) frame = requestAnimationFrame(tick);
+    else frame = 0;
   }
   function sync() {
     cancelAnimationFrame(frame);
     frame = 0;
     previous = null;
     if (reduced.matches) {elapsed = 0; paint(0);}
-    else if (visible && !document.hidden) frame = requestAnimationFrame(tick);
+    else if (visible && !document.hidden && elapsed < TURN_MS) frame = requestAnimationFrame(tick);
   }
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(entries => {

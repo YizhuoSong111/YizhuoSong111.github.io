@@ -44,6 +44,7 @@ This checkout uses `scripts/build.mjs`, not Vite. It already emits site-root URL
 | `public/files/` | Downloadable files; the supplied CV is included as a Word document |
 | `public/styles.css` | Responsive design and accessibility preferences |
 | `public/site.js` | Progressive navigation and citation enhancements |
+| `public/continuum.js` | Shared static SVG and keyboard-accessible cellular-state interaction |
 | `scripts/build.mjs` | Reusable templates and static-site generation |
 
 Markdown files support YAML front matter. Substantial research copy lives in content files, not templates. These are author-controlled sources; only trusted author content should be used.
@@ -71,3 +72,9 @@ Still to add: confirmed Regulotype and FUSE-Velo results, project code URLs, an 
 The local apple-design skill informs immediate press feedback, a small interruptible critically damped spring on the menu indicator, platform typography, predictable navigation, and restrained depth. The website does not require gestures or JavaScript to read. Native links and disclosure controls work with keyboard input. Escape dismisses the menu and returns focus; internal menu links move focus into their destination. Reduced motion, reduced transparency, higher contrast, print styles, touch targets, and responsive layouts are supported.
 
 No trackers, externally loaded fonts, third-party scripts, or client-side framework are required. The output is static and can be served from the root of a web origin. For hosting under a subpath, add a base-path option to the generator before deployment.
+
+The current design uses warm paper, forest-green ink, a restrained terracotta accent, and an editorial serif/sans hierarchy. Theme-to-project links and responsive portrait sources live in `content/site.yml`. The original portrait remains available as a source asset; browsers load the smaller JPEG variants through `srcset`.
+
+The cellular-state figure uses illustrative curves, with a native range input and live SVG markers. Its static diagram remains readable without JavaScript, while unavailable interactive controls stay hidden. The decorative helix makes one finite turn; reduced-motion preferences keep it static. Scroll position updates the section index and reading-progress line without a persistent animation loop.
+
+See [DESIGN_REVIEW.md](DESIGN_REVIEW.md) for the design audit, browser checks, and validation boundaries.
