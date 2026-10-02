@@ -6,12 +6,12 @@ portrait:
   alt: Portrait of Yizhuo Song
   width: 1200
   height: 800
-description: Statistical genetics, single-cell genomics, and computational biology. I explore how computation can reveal hidden structure in complex biological systems.
+description: Statistical and computational methods for understanding genetic regulation across cellular states. Research in single-cell genomics and statistical genetics.
 identity:
   - Statistical Genetics
   - Single-Cell Genomics
   - AI for Biology
-statement: I explore how computation can reveal hidden structure in complex biological systems.
+statement: I develop statistical and computational methods to understand genetic regulation across cellular states.
 email: yizhuo.song@yale.edu
 navigation:
   - {id: home, label: Home}

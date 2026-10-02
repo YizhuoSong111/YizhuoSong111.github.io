@@ -47,10 +47,10 @@ function diagram(kind, title) {
 }
 function header(homepage = false) {
   const wordmark = homepage
-    ? `<a class="wordmark" href="/#home" aria-label="Yizhuo Song home">YS</a>`
+    ? `<a class="wordmark" href="/#home" aria-label="Yizhuo Song home">YS${geneMark()}</a>`
     : `<a class="wordmark" href="/#home" aria-label="Yizhuo Song home">YS<span class="wordmark-name">Yizhuo Song</span></a>`;
   const navigation = [['work','Work'],['journey','Journey'],['contact','Contact']];
-  return `<a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="nav-shell">${wordmark}<span class="header-context" aria-hidden="true">${homepage ? 'Research &amp; perspective' : 'Research story'}</span><nav class="desktop-nav" aria-label="Primary navigation">${navigation.map(([id,label])=>link(`/#${id}`,label)).join('')}</nav><details class="site-menu"><summary aria-label="Explore all sections"><span>Explore</span><span class="menu-icon" aria-hidden="true">+</span></summary><nav aria-label="Explore all sections">${site.navigation.map((n,i)=>`<a href="/#${n.id}"><span class="menu-number" aria-hidden="true">0${i}</span>${esc(n.label)}<span class="menu-arrow" aria-hidden="true">↗</span></a>`).join('')}</nav></details></div><div class="reading-progress" aria-hidden="true"></div></header>`;
+  return `<a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="nav-shell">${wordmark}<span class="header-context" aria-hidden="true">${homepage ? '' : 'Research story'}</span><nav class="desktop-nav" aria-label="Primary navigation">${navigation.map(([id,label])=>link(`/#${id}`,label)).join('')}</nav><details class="site-menu"><summary aria-label="Explore all sections"><span>Explore</span><span class="menu-icon" aria-hidden="true">+</span></summary><nav aria-label="Explore all sections">${site.navigation.map((n,i)=>`<a href="/#${n.id}"><span class="menu-number" aria-hidden="true">0${i}</span>${esc(n.label)}<span class="menu-arrow" aria-hidden="true">↗</span></a>`).join('')}</nav></details></div><div class="reading-progress" aria-hidden="true"></div></header>`;
 }
 function footer() {
   return `<footer class="footer shell"><a href="/#home" class="footer-name">${esc(site.name)}</a><span>Statistical genetics &amp; computational biology</span><a href="#main">Back to top ↑</a></footer>`;
@@ -86,17 +86,14 @@ function homeProject(p, i) {
 const home = `<main id="main"><section id="home" class="hero shell" aria-labelledby="hero-name">
 <div class="hero-layout">
   <div class="hero-intro">
-    <p class="hero-kicker eyebrow" data-hero="0">A study in biological variation</p>
     <h1 id="hero-name" data-hero="1">${esc(site.name)}<span aria-hidden="true">.</span></h1>
     <p class="hero-affiliation" data-hero="2">${esc(site.affiliation)}</p>
-    <ul class="identity" aria-label="Research identity" data-hero="2">${site.identity.map(i=>`<li>${esc(i)}</li>`).join('')}</ul>
   </div>
   <div class="hero-copy">
     <p class="hero-statement" data-hero="3">${esc(site.statement)}</p><div class="hero-actions" data-hero="4"><a class="text-link" href="#work">Explore my research <span aria-hidden="true">↓</span></a><a class="quiet-link" href="${safeURL(site.links.find(l=>l.label==='CV').url)}">Curriculum vitae <span aria-hidden="true">↗</span></a></div>
   </div>
   <figure class="hero-portrait" data-hero="4">
     <img src="${safeURL(site.portrait.src)}" srcset="${safeURL(site.portrait.small)} 720w, ${safeURL(site.portrait.src)} ${esc(site.portrait.width)}w" sizes="(max-width:760px) 76vw, 380px" alt="${esc(site.portrait.alt)}" width="${esc(site.portrait.width)}" height="${esc(site.portrait.height)}" fetchpriority="high">
-    <figcaption class="hero-focus">${geneMark()}<span>${esc(site.identity[0])}</span></figcaption>
   </figure>
 </div>
 <div class="themes">${site.themes.map((t,i)=>`<div data-reveal-group data-reveal-order="${i}"><span class="theme-number">0${i+1}</span><h2><a href="#project-${esc(t.project)}">${esc(t.title)} <span aria-hidden="true">↗</span></a></h2><p>${esc(t.text)}</p></div>`).join('')}</div></section>

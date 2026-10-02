@@ -91,7 +91,7 @@ function enhanceWayfinding() {
       });
       if (context && homeSections.length) {
         const label = current.querySelector('.section-heading .eyebrow')?.textContent;
-        context.textContent = label || 'Research & perspective';
+        context.textContent = label || '';
       }
     }
     if (progress) progress.style.transform = `scaleX(${Math.min(1,Math.max(0,y/maxScroll)).toFixed(4)})`;

@@ -23,7 +23,7 @@ home_story:
     - {value: '2.8M+', label: single nuclei}
     - {value: '388', label: donors}
     - {value: '18', label: cell types}
-    - {value: '+20.3%', label: unique eGenes}
+    - {value: '+20.3%', label: more eGenes vs. matched pseudobulk}
 image: null
 image_alt: null
 image_caption: null
@@ -59,7 +59,7 @@ I developed the scPME framework, derived the donor-level reduction and vectorize
 
 ## 05. What We Found
 
-After calibration, I applied the framework to **more than 2.8 million nuclei from 388 adult prefrontal cortex samples**. The analysis revealed shared and state-dependent regulatory effects across cellular continua. The work was presented as an ISMB 2026 poster, with a journal manuscript in preparation.
+After calibration, I applied the framework to **more than 2.8 million nuclei from 388 adult prefrontal cortex donors**. scPME-QTL identified more eGenes than matched pseudobulk analysis in **17 of 18 cell types**, with an **overall increase of 20.3%**. The analysis also revealed state-dependent regulatory effects across continuous cellular states. I presented this work at ISMB 2026; a journal manuscript is in preparation.
 
 ## 06. What It Led Me To Ask
 

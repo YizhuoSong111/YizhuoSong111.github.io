@@ -3,11 +3,11 @@ title: Regulotype
 order: 2
 category: Context-dependent genetic regulation
 headline: Describing cells through their genetic responses.
-summary: I develop statistical models of cell-resolved cis-regulatory effect profiles, asking whether patterns of genetic response across loci can describe cellular context.
+summary: I built a single-cell simulation framework to test whether patterns of genetic effects can reveal cellular context.
 hook: What if a cellular representation reflected how genetic effects change?
 status: Research in progress
 context: Statistical Functional Genomics Lab · Columbia
-tags: [Latent factor models, Cis-response profiles, Empirical Bayes]
+tags: [scDesign2 simulations, SURGE evaluation, Cis-regulatory effects]
 diagram: profiles
 image: null
 image_alt: null
@@ -19,7 +19,7 @@ outputs:
   - label: Code
     detail: Repository link to add
     url: null
-sources: [CV, Website specification]
+sources: [CV, SOP, Website specification]
 ---
 ## 01. The Question
 
@@ -27,17 +27,17 @@ Can we characterize cellular contexts through heterogeneous genetic effects acro
 
 ## 02. Why It Matters
 
-Genetic regulation depends on context. Studying the structure of those responses offers a way to ask which cells share regulatory behavior and where that behavior differs, while confronting the sparsity of single-cell measurements.
+Cells are often grouped by expression similarity before their genetic effects are compared. Regulotype asks whether recurrent patterns of cis-regulatory effects can reveal cellular context. Testing this requires separating genetic-response structure from expression similarity in sparse single-cell data.
 
 ## 03. The Approach
 
-The model uses low-rank latent factors to jointly learn cellular regulatory coordinates and variant-specific effect loadings. Pooling information across cells and independent cis-regulatory regions supports estimation of cell-resolved effect profiles.
+The simulation framework uses scDesign2 to generate realistic expression data while independently controlling the structure and magnitude of context-dependent genetic effects.
 
-Covariate-moderated empirical Bayes regularization stabilizes effect estimation in sparse data. Simulation, model development, and conceptual analysis are part of the research direction.
+With 200 donors and 500 genes, I evaluated SURGE under null, signal, and shuffled-control settings. These comparisons test whether its latent factors recover shared and context-specific regulatory structure and whether that structure reflects genetic responses beyond expression similarity.
 
 ## 04. My Contribution
 
-I developed statistical methods for cell-resolved cis-regulatory effect profiles, implemented the low-rank latent factor models, and applied covariate-moderated empirical Bayes regularization to characterize context-dependent regulatory heterogeneity.
+I developed the single-cell simulation framework, specified the genetic-effect scenarios and controls, and evaluated SURGE's recovery of regulatory structure. The experiments let me examine which inferred factors reflect the genetic effects built into the data.
 
 ## 05. What We Found
 
@@ -45,7 +45,7 @@ This work is in progress.
 
 ## 06. What It Led Me To Ask
 
-How can we distinguish a reproducible genetic-response structure from patterns introduced by sparse measurement or model assumptions? I want to connect these representations to uncertainty-aware genetic inference.
+How can these genetic-response patterns help identify cellular contexts relevant to disease? We aim to apply the framework to blood-brain-barrier cell states and identify vascular contexts in which Alzheimer's disease-associated regulatory effects become active.
 
 ## 07. Outputs
 
